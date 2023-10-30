@@ -29,11 +29,32 @@ label .text-dark {
     transition: color 0.2s ease;
 }
 
+/* complementado para compatibilizar com Bootstrap >5.3.x mantendo o mesmo efeito de hover */
+.btn-check:checked+.btn-outline-danger h3,
+.btn-check:active+.btn-outline-danger h3,
+.btn-check:hover+.btn-outline-danger h3,
+.btn-check:checked+.btn-outline-danger hr,
+.btn-check:active+.btn-outline-danger hr,
+.btn-check:hover+.btn-outline-danger hr,
+.btn-check:checked+.btn-outline-danger h4,
+.btn-check:active+.btn-outline-danger h4,
+.btn-check:hover+.btn-outline-danger h4,
+.btn-check:checked+.btn-outline-danger p,
+.btn-check:active+.btn-outline-danger p,
+.btn-check:hover+.btn-outline-danger p,
 .btn-check:checked+.btn-outline-danger .text-dark,
 .btn-check:active+.btn-outline-danger .text-dark,
 .btn-check:hover+.btn-outline-danger .text-dark {
     transition: color 0.2s ease;
     color: white !important;
+}
+
+/* adicionado para compatibilizar com Bootstrap >5.3.x mantendo o mesmo efeito de hover */
+.btn-check:checked+.btn-outline-danger,
+.btn-check:active+.btn-outline-danger,
+.btn-check:hover+.btn-outline-danger {
+    transition: background-color 0.2s ease;
+    background-color: var(--bs-danger) !important;
 }
 
 .flex-even {
@@ -47,9 +68,14 @@ label .text-dark {
 }
 
 .accordion-button:not(.collapsed)::after {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");    
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
 fieldset.row .form-floating>label {
     margin-left: calc(var(--bs-gutter-x) * 0.5);
+}
+
+/* adicionado para deixar links de paginação em vermelho */
+.page-link {
+    color: var(--bs-danger);
 }
